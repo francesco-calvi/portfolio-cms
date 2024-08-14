@@ -1,0 +1,9 @@
+{
+  "HomePage": {
+    "welcome": "Inizia a modificare il file"
+  },
+  "LoginPage": {
+    "title": "Entra con il tuo account",
+    "continue": "Continua"
+  }
+}

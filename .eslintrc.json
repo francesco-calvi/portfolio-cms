@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "caughtErrors": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-duplicate-enum-values": "off",
+    "no-empty": "off",
+    "no-empty-pattern": "off",
+    "react/display-name": "off",
+    "react/no-unknown-property": "off",
+    "react/jsx-key": "off"
+  },
+  "plugins": ["@typescript-eslint"],
+  "overrides": [{ "files": ["*.ts", "*.tsx"] }]
+}
