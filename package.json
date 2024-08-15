@@ -15,6 +15,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "next": "14.2.5",
+    "next-i18n-router": "^5.5.1",
     "next-intl": "^3.17.1",
     "react": "^18",
     "react-dom": "^18",

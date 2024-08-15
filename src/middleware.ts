@@ -1,22 +1,11 @@
-import createMiddleware from "next-intl/middleware";
-import { locales } from "./i18n/config";
+import { i18nRouter } from "next-i18n-router";
+import i18nConfig from "./i18nConfig";
 
-export default createMiddleware({
-  // A list of all locales that are supported
-  locales,
-  // Used when no locale matches
-  defaultLocale: "it",
-  // only include a locale prefix for non-default locales
-  localePrefix: "as-needed",
-});
+export function middleware(request) {
+  return i18nRouter(request, i18nConfig);
+}
 
+// only applies this middleware to files in the app directory
 export const config = {
-  // Matcher entries are linked with a logical "or", therefore
-  // if one of them matches, the middleware will be invoked.
-  matcher: [
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    "/((?!api|_next|_vercel|.*\\..*).*)",
-  ],
+  matcher: "/((?!api|static|.*\\..*|_next).*)",
 };

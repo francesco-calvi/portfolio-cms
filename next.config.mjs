@@ -1,11 +1,23 @@
-import createNextIntlPlugin from "next-intl/plugin";
-
-const withNextIntl = createNextIntlPlugin(
-  // Specify a custom path here
-  "./src/i18n/config.ts"
-);
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/it/chi-sono",
+          destination: "/it/about",
+        },
+        {
+          source: "/it/contatti",
+          destination: "/it/contact",
+        },
+        {
+          source: "/it/progetti",
+          destination: "/it/projects",
+        },
+      ],
+    };
+  },
+};
 
-export default withNextIntl(nextConfig);
+export default nextConfig;

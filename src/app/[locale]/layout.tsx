@@ -1,13 +1,15 @@
+import Navbar from "@/components/Navbar";
 import { getAuthToken } from "@/lib/actions";
 import StoreProvider from "@/lib/redux/StoreProvider";
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
+import client from "../../../tina/__generated__/client";
 import TokenProvider from "../TokenProvider";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Al.ta Cucina Template",
-  description: "Generated using Al.ta Cucina template",
+  title: "Francesco Calvi",
+  description:
+    "Francesco Calvi è uno sviluppatore frontend con anni di esperienza alle spalle, guarda i progetti migliori.",
 };
 
 export default async function RootLayout({
@@ -19,12 +21,19 @@ export default async function RootLayout({
 }>) {
   const token = getAuthToken();
 
+  const {
+    data: { nav_links },
+  } = await client.queries.nav_links({
+    relativePath: `${locale}/nav_links.md`,
+  });
+
   return (
     <html lang={locale}>
-      <body>
+      <body className="bg-black text-blue-100">
         <StoreProvider>
           <TokenProvider token={token}>
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+            <Navbar links={nav_links.links} />
+            {children}
           </TokenProvider>
         </StoreProvider>
       </body>

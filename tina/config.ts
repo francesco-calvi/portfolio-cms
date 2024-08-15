@@ -25,6 +25,7 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
@@ -56,19 +57,82 @@ export default defineConfig({
         name: "page",
         label: "Pages",
         path: "content/pages",
-        format: "json",
+        format: "md",
         fields: [
           {
             type: "string",
-            name: "meta_title",
-            label: "Meta Title",
+            name: "title",
+            label: "Title",
             isTitle: true,
             required: true,
           },
           {
-            name: "title",
-            label: "Title",
-            type: "string",
+            name: "blocks",
+            label: "Blocks",
+            type: "object",
+            list: true,
+            templates: [
+              {
+                name: "welcome_hero",
+                label: "Welcome Hero",
+                fields: [
+                  {
+                    name: "message",
+                    label: "Message",
+                    type: "rich-text",
+                  },
+                  {
+                    name: "button_text",
+                    label: "Button text",
+                    type: "string",
+                  },
+                ],
+              },
+              {
+                name: "about",
+                label: "About",
+                fields: [
+                  {
+                    name: "body",
+                    label: "Body",
+                    type: "rich-text",
+                  },
+                  {
+                    name: "nation",
+                    label: "Born in",
+                    type: "string",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "nav_links",
+        label: "Navbar links",
+        path: "content/nav_links",
+        format: "md",
+        fields: [
+          {
+            type: "object",
+            name: "links",
+            label: "Links",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "name",
+                label: "Name",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "path",
+                label: "Path",
+                required: true,
+              },
+            ],
           },
         ],
       },
