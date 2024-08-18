@@ -5,7 +5,9 @@ This is a Portfolio website build with Next.js and Tina CMS.
 
 Intall dependencies:
 
-```yarn```
+```bash
+yarn
+```
 
 Run the development server:
 
@@ -23,7 +25,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## What you get
 
 #### Features
-- Tina CMS dashboard at [http://localhost:3000/admin/index.html](http://localhost:3000/admin/index.html)- 
+- Tina CMS dashboard at [http://localhost:3000/admin/index.html](http://localhost:3000/admin/index.html)
 - Internationalization with [next-i18n-router](https://github.com/i18nexus/next-i18n-router)
 
 #### Configuration
