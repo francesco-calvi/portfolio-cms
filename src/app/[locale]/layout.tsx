@@ -31,7 +31,7 @@ export default async function RootLayout({
         <StoreProvider>
           <LocaleProvider locale={locale}>
             <Navbar links={nav_links.links} />
-            {children}
+            <div className="pt-[--navbar-height]">{children}</div>
           </LocaleProvider>
         </StoreProvider>
       </body>

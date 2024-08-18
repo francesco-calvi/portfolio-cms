@@ -30,9 +30,9 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
         fields: [
           {
             type: "string",
@@ -43,8 +43,8 @@ export default defineConfig({
           },
           {
             type: "rich-text",
-            name: "body",
-            label: "Body",
+            name: "description",
+            label: "Description",
             isBody: true,
           },
         ],
