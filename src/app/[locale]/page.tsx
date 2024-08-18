@@ -6,7 +6,7 @@ import client from "../../../tina/__generated__/client";
 export default async function Home({ params: { locale } }) {
   // const t = useTranslations("HomePage");
   const result = await client.queries.page({
-    relativePath: `${locale}/homepage.md`,
+    relativePath: `${locale}/home.md`,
   });
 
   return <HomepageScreen {...result} />;

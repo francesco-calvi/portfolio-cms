@@ -3,7 +3,8 @@ import routes from "@/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { PageBlocksWelcome_Hero } from "../../tina/__generated__/types";
+import { PageBlocksWelcome_Hero } from "../../../tina/__generated__/types";
+import Button from "../Button";
 
 const WelcomeHero = (props: PageBlocksWelcome_Hero) => {
   const { message, button_text } = props;
@@ -38,14 +39,15 @@ const WelcomeHero = (props: PageBlocksWelcome_Hero) => {
                 fill
                 unoptimized
                 alt="Immagine principale"
+                priority
               />
             </div>
           </div>
         </div>
       </div>
-      <button className="border border-primary-400 active:scale-95 active:bg-primary-400 duration-100 ease-in-out mt-4 mx-auto py-3 px-4 rounded-lg bg-primary-500 text-center font-semibold">
-        <Link href={`${routes.projects[locale]}`}>{button_text}</Link>
-      </button>
+      <Link href={`${routes.projects[locale]}`}>
+        <Button text={button_text} variant="primary" />
+      </Link>
     </section>
   );
 };

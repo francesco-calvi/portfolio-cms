@@ -93,6 +93,11 @@ export default defineConfig({
                 label: "About",
                 fields: [
                   {
+                    name: "title",
+                    label: "Title",
+                    type: "string",
+                  },
+                  {
                     name: "body",
                     label: "Body",
                     type: "rich-text",
@@ -101,6 +106,71 @@ export default defineConfig({
                     name: "nation",
                     label: "Born in",
                     type: "string",
+                  },
+                  {
+                    name: "button_text",
+                    label: "Button text",
+                    type: "string",
+                  },
+                ],
+              },
+              {
+                name: "services",
+                label: "Services",
+                fields: [
+                  {
+                    name: "title",
+                    label: "Title",
+                    type: "string",
+                  },
+                  {
+                    name: "description",
+                    label: "Description",
+                    type: "rich-text",
+                  },
+                  {
+                    type: "object",
+                    name: "button",
+                    label: "Button",
+                    fields: [
+                      {
+                        type: "string",
+                        name: "name",
+                        label: "Name",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "path",
+                        label: "Path",
+                        required: true,
+                      },
+                    ],
+                  },
+                  {
+                    name: "services",
+                    label: "Services",
+                    type: "object",
+                    list: true,
+                    fields: [
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "description",
+                        label: "Description",
+                      },
+                      {
+                        type: "image",
+                        name: "image",
+                        label: "Image",
+                        required: true,
+                      },
+                    ],
                   },
                 ],
               },

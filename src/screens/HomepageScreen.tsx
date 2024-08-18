@@ -1,5 +1,7 @@
-import WelcomeHero from "@/components/WelcomeHero";
-import React from "react";
+import About from "@/components/sections/About";
+import Services from "@/components/sections/Services";
+import WelcomeHero from "@/components/sections/WelcomeHero";
+import React, { Fragment, ReactElement } from "react";
 import { PageQuery } from "../../tina/__generated__/types";
 
 interface Props {
@@ -19,17 +21,26 @@ const HomepageScreen: React.FC<Props> = (props) => {
   const { data } = props;
   const { page } = data;
 
-  return (
-    <main>
-      {page.blocks?.map((block) => {
-        switch (block?.__typename) {
-          case "PageBlocksWelcome_hero": {
-            return <WelcomeHero {...block} />;
-          }
-        }
-      })}
-    </main>
-  );
+  const renderBlock = (block) => {
+    let res: null | ReactElement = null;
+    switch (block?.__typename) {
+      case "PageBlocksWelcome_hero": {
+        res = <WelcomeHero {...block} />;
+        break;
+      }
+      case "PageBlocksAbout": {
+        res = <About {...block} />;
+        break;
+      }
+      case "PageBlocksServices": {
+        res = <Services {...block} />;
+        break;
+      }
+    }
+    return <Fragment key={block.__typename}>{res}</Fragment>;
+  };
+
+  return <main>{page.blocks?.map(renderBlock)}</main>;
 };
 
 export default HomepageScreen;

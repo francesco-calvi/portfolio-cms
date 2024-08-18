@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
-import { getAuthToken } from "@/lib/actions";
-import StoreProvider from "@/lib/redux/StoreProvider";
 import type { Metadata } from "next";
 import client from "../../../tina/__generated__/client";
-import TokenProvider from "../TokenProvider";
+
+import Navbar from "@/components/Navbar";
+import LocaleProvider from "@/lib/context/LocaleProvider";
+import StoreProvider from "@/lib/redux/StoreProvider";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -19,8 +19,6 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const token = getAuthToken();
-
   const {
     data: { nav_links },
   } = await client.queries.nav_links({
@@ -31,10 +29,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="bg-black text-blue-100">
         <StoreProvider>
-          <TokenProvider token={token}>
+          <LocaleProvider locale={locale}>
             <Navbar links={nav_links.links} />
             {children}
-          </TokenProvider>
+          </LocaleProvider>
         </StoreProvider>
       </body>
     </html>
