@@ -1,5 +1,3 @@
-import { getLocale } from "@/lib/actions";
-import routes from "@/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -8,7 +6,6 @@ import Button from "../Button";
 
 const WelcomeHero = (props: PageBlocksWelcome_Hero) => {
   const { message, button_text } = props;
-  const locale = getLocale();
 
   return (
     <section className="h-screen flex justify-center flex-col items-center">
@@ -45,7 +42,9 @@ const WelcomeHero = (props: PageBlocksWelcome_Hero) => {
           </div>
         </div>
       </div>
-      <Link href={`${routes.projects[locale]}`}>
+      <Link
+        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_CONTACT}&subject=Opportunità di collaborazione`}
+      >
         <Button text={button_text} variant="primary" />
       </Link>
     </section>

@@ -42,16 +42,23 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "link",
+            label: "Link",
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Main image",
+            required: true,
+          },
+          {
             type: "rich-text",
             name: "description",
             label: "Description",
             isBody: true,
           },
         ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-        },
       },
       {
         name: "page",

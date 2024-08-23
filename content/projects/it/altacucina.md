@@ -1,8 +1,8 @@
 ---
 title: Al.ta Cucina
+link: 'https://altacucina.co'
+image: /static/images/altacucina-logo.webp
 ---
-
-![](/static/images/altacucina-logo.webp)
 
 ## Descrizione
 

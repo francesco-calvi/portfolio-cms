@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { PageBlocksServices } from "../../../tina/__generated__/types";
 
+import { LocaleContext } from "@/lib/context/LocaleProvider";
+import { useContext } from "react";
 import Button from "../Button";
 import ServiceCard from "../ServiceCard";
 
 const Services = (props: PageBlocksServices) => {
   const { title, description, button, services } = props;
+  const locale = useContext(LocaleContext);
 
   return (
     <section className="min-h-screen py-8 lg:py-16 flex items-center justify-center">
@@ -24,7 +29,10 @@ const Services = (props: PageBlocksServices) => {
           )}
         </div>
 
-        <Link className="block w-fit mt-4 mx-auto" href={`/${button?.path}`}>
+        <Link
+          className="block w-fit mt-4 mx-auto"
+          href={`/${locale}/${button?.path}`}
+        >
           <Button text={button?.name} variant="primary" />
         </Link>
       </div>
