@@ -30,6 +30,19 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "language",
+        label: "Languages",
+        path: "content/languages",
+        fields: [
+          {
+            type: "string",
+            name: "name",
+            label: "Name",
+            required: true,
+          },
+        ],
+      },
+      {
         name: "project",
         label: "Projects",
         path: "content/projects",
@@ -42,6 +55,13 @@ export default defineConfig({
             required: true,
           },
           {
+            label: "Language",
+            name: "lang",
+            type: "reference",
+            collections: ["language"],
+            required: true,
+          },
+          {
             type: "string",
             name: "link",
             label: "Link",
@@ -50,6 +70,12 @@ export default defineConfig({
             type: "image",
             name: "image",
             label: "Main image",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "thumbnail",
+            label: "Thumbnail",
             required: true,
           },
           {
