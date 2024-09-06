@@ -2,8 +2,8 @@
 title: Al.ta Cucina
 lang: content/languages/english.md
 link: 'https://altacucina.co'
-image: /static/images/altacucina-logo.webp
-thumbnail: /static/images/altacucina-logo.webp
+image: /public/static/images/altacucina-logo.webp
+thumbnail: /public/static/images/altacucina-logo.webp
 ---
 
 ## Description
