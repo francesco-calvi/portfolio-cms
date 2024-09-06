@@ -2,7 +2,7 @@
 title: Netflix Clone
 lang: content/languages/italian.md
 link: 'https://netflix-clone-d028e.web.app'
-image: /static/video/nf-video.mp4
+image: /public/static/video/nf-video.mp4
 thumbnail: /static/images/netflix-thumbnail.webp
 ---
 
