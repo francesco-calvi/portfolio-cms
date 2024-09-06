@@ -47,7 +47,13 @@ export default async function ProjectsPage({
                       "linear-gradient(45deg, rgba(69, 69, 69, 0.2) 0%, rgba(135, 135, 135, 0.5) 100%)",
                   }}
                 >
-                  <div className="flex space-x-4 items-center absolute right-0 bottom-0 p-4">
+                  <div
+                    style={{
+                      background:
+                        "linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 50%)",
+                    }}
+                    className="flex space-x-4 items-center absolute left-0 right-0 bottom-0 p-4 justify-end"
+                  >
                     <h3 className="font-bold text-2xl">{project.title}</h3>
                     <button className="w-10 h-10 rounded-full bg-white text-primary-400 grid place-items-center hover:text-white hover:bg-primary-300 duration-200 ease-in-out">
                       <svg

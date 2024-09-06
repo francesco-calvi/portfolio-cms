@@ -29,7 +29,7 @@ export default async function ProjectPage({
   try {
     result = await client.queries.project({
       relativePath: `${locale}/${slug}.md`,
-    });    
+    });
     if (result?.errors || !result) throw new Error("Error while fetching");
   } catch (error) {
     console.log(error);
@@ -58,6 +58,7 @@ export default async function ProjectPage({
           width={1200}
           height={600}
           className="object-contain"
+          unoptimized
         />
       )}
       {link && (
