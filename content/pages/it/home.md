@@ -39,22 +39,22 @@ blocks:
         description: >-
           Realizzo siti web e applicazioni web interattive, utilizzando le
           tecnologie più moderne.
-        image: /static/icons/coding.svg
+        image: /public/static/icons/coding.svg
       - title: Responsive Design
         description: >-
           Creo layout che si adattano perfettamente a qualsiasi dispositivo,
           garantendo un'esperienza utente ottimale.
-        image: /static/icons/responsive.svg
+        image: /public/static/icons/responsive.svg
       - title: Ottimizzazione delle Prestazioni
         description: >-
           Miglioro la velocità di caricamento e la reattività delle tue pagine
           web, per un’esperienza utente fluida.
-        image: /static/icons/optimize.svg
+        image: /public/static/icons/optimize.svg
       - title: Manutenzione e Aggiornamenti
         description: >-
           Fornisco supporto continuo per mantenere i tuoi progetti sempre
           aggiornati e sicuri.
-        image: /static/icons/maintenance.svg
+        image: /public/static/icons/maintenance.svg
     _template: services
 ---
 
