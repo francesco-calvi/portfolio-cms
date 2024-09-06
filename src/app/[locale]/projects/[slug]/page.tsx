@@ -29,8 +29,7 @@ export default async function ProjectPage({
   try {
     result = await client.queries.project({
       relativePath: `${locale}/${slug}.md`,
-    });
-    console.log(result);
+    });    
     if (result?.errors || !result) throw new Error("Error while fetching");
   } catch (error) {
     console.log(error);
@@ -95,6 +94,7 @@ const components = {
           alt={""}
           width={1200}
           height={600}
+          unoptimized
         />
       );
     }
