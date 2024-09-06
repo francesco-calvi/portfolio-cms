@@ -87,15 +87,18 @@ const components = {
   ),
   p: (props) => {
     const content = props.children.props.content[0];
+
     if (content.type === "img") {
       return (
-        <Image
-          className="w-auto h-auto mx-auto my-10 max-w-3xl last-of-type:mb-0"
-          src={content.url}
-          alt={""}
-          width={1200}
-          height={600}
-        />
+        <div className="relative aspect-video">
+          <Image
+            className="mx-auto my-10 max-w-3xl last-of-type:mb-0 object-contain"
+            src={content.url}
+            alt={""}
+            fill
+            unoptimized
+          />
+        </div>
       );
     }
     if (content.type === "a" && !!content.url) {
