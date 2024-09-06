@@ -95,7 +95,6 @@ const components = {
           alt={""}
           width={1200}
           height={600}
-          unoptimized
         />
       );
     }
