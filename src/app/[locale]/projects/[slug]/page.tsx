@@ -39,7 +39,7 @@ export default async function ProjectPage({
   const {
     data: { project },
   } = result;
-  const { title, description, image, link } = project;
+  const { title, description, image, link, thumbnail } = project;
   const hasVideo = image.includes("video");
 
   return (
@@ -48,7 +48,12 @@ export default async function ProjectPage({
         {title}
       </h1>
       {hasVideo ? (
-        <video controls muted className="w-full aspect-video">
+        <video
+          controls
+          muted
+          className="w-full aspect-video"
+          poster={thumbnail}
+        >
           <source src={image} type="video/mp4" />
         </video>
       ) : (
