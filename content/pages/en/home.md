@@ -38,20 +38,20 @@ blocks:
         description: >-
           I create interactive websites and web applications using the latest
           technologies.
-        image: /static/icons/coding.svg
+        image: /public/static/icons/coding.svg
       - title: Responsive Design
         description: >-
           I design layouts that perfectly adapt to any device, ensuring an
           optimal user experience.
-        image: /static/icons/responsive.svg
+        image: /public/static/icons/responsive.svg
       - title: Performance Optimization
         description: >-
           I improve loading speed and the responsiveness of your web pages for a
           smooth user experience.
-        image: /static/icons/optimize.svg
+        image: /public/static/icons/optimize.svg
       - title: Maintenance and Updates
         description: I provide ongoing support to keep your projects up-to-date and secure.
-        image: /static/icons/maintenance.svg
+        image: /public/static/icons/maintenance.svg
     _template: services
 ---
 
