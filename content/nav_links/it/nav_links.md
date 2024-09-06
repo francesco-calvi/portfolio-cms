@@ -5,7 +5,5 @@ link:
 links:
   - name: Progetti
     path: /progetti
-  - name: Contatti
-    path: /contatti
 ---
 
