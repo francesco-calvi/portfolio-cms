@@ -39,3 +39,9 @@ next-env.d.ts
 /.todo.*
 node_modules
 .env
+
+# opennextjs
+/.open-next
+
+# wrangler
+/.wrangler
